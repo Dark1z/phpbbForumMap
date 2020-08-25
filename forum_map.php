@@ -44,7 +44,7 @@ abstract class forum_map
 	/** @var array All Forum Data */
 	private $forums;
 
-	/** @var array Forum SQL Coloumn */
+	/** @var array Forum SQL Column */
 	private $sql_col;
 
 	/** @var array Store Padding for each Forum */
@@ -87,8 +87,8 @@ abstract class forum_map
 	{
 		$this->padding_spacer	= !empty($padding_spacer) ? $padding_spacer : self::PADDING_SPACER;
 		$this->padding_symbol	= !empty($padding_symbol) ? $padding_symbol : self::PADDING_SYMBOL;
+		$this->sql_col = $this->get_forums_cust_sql_col();
 
-		$this->get_forums_cust_sql_col();
 		$this->get_forums();
 		$this->parse_forums();
 
@@ -192,19 +192,19 @@ abstract class forum_map
 	}
 
 	/**
-	 * Get forum custom SQL Coloumn.
+	 * Get forum custom SQL Column.
 	 *
-	 * @return void
+	 * @return array
 	 * @access protected
 	 */
 	abstract protected function get_forums_cust_sql_col();
 	/** @example :
 	{
 		// For one forum table coloumn
-		$this->sql_col = ['dark1_ext_enable'];
+		return ['dark1_ext_enable'];
 		// OR
 		// For two or more forum table coloumn
-		$this->sql_col = ['dark1_ext_enable', 'dark1_ext_value'];
+		return ['dark1_ext_enable', 'dark1_ext_value'];
 	}
 	*/
 
