@@ -1,34 +1,23 @@
 # phpBB Forum Mapper
    
 This is used to create presentable phpBB Forum structure.   
-For example in form of Table, Dropdown, ...etc... , But the most comman is Table.   
+For example in form of Table, Dropdown, ...etc... , But the most common is Table.   
+   
+Remember to do the replacement of `vendor\ext\path` to *Actual Path* for **namespace** and **use** statements in **Abstract Class**, **Extended Class** and *wherever required*.   
    
 This is an **Abstract Class** that need's to be **Inherited** by **Extended Class** , as follows :   
    
 # Example of Extended Class from Abstract Class
 ```php
-namespace <vendor>\<ext>\<path>;
+namespace vendor\ext\path;
 
-require_once('forum_map.php');
-
-use phpbb\db\driver\driver_interface as db_driver;
-use dark1\phpbb\forum_map;
+use vendor\ext\path\forum_map;
 
 /**
  * EXT Forum Mapper.
  */
 class forum_map_ext extends forum_map
 {
-	/**
-	 * Constructor.
-	 *
-	 * @param \phpbb\db\driver\driver_interface		$db		Database object
-	 */
-	public function __construct(db_driver $db)
-	{
-		parent::__construct($db);
-	}
-
 	/**
 	 * Get forum custom SQL Column.
 	 *
@@ -72,6 +61,7 @@ class forum_map_ext extends forum_map
 # Usage of above Extended Class
 ```php
 global $db, $template, $phpbb_container;
+
 // Class Initialization
 $forum_map_rsi = new forum_map_ext($db);
 // OR

@@ -11,7 +11,7 @@
  *
  */
 
-namespace dark1\phpbb;
+namespace vendor\ext\path;
 
 /**
  * @ignore
