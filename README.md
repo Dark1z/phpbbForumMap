@@ -19,18 +19,22 @@ use vendor\ext\path\forum_map;
 class forum_map_ext extends forum_map
 {
 	/**
-	 * Get forum custom SQL Column.
+	 * Get forum custom SQL Array.
+	 *
+	 * @param array		$sql_ary	Forum SQL Array
 	 *
 	 * @return array
 	 * @access protected
 	 */
-	protected function get_forums_cust_sql_col()
+	protected function get_forums_cust_sql_ary($sql_ary)
 	{
 		// For one forum table column
-		return ['vendor_ext_enable'];
+		$sql_ary['SELECT'] .= ', f.vendor_ext_enable';
 		// OR
 		// For two or more forum table columns
-		return ['vendor_ext_enable', 'vendor_ext_value'];
+		$sql_ary['SELECT'] .= ', f.vendor_ext_enable, f.vendor_ext_value';
+
+		return $sql_ary;
 	}
 
 	/**
