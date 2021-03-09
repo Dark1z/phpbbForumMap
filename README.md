@@ -89,7 +89,7 @@ foreach ($forum_tpl_rows as $tpl_row)
 ```
 Done.  👍   
    
-## GitHub Repository : [phpbbForumMap](https://github.com/dark-1/phpbbForumMap)   
+## GitHub Repository : [phpbbForumMap](https://github.com/Dark1z/phpbbForumMap)   
    
 ## License [GPLv2](license.txt)   
    
